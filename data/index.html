@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogurt-O-Rama</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Yogurt-O-Rama</h1>
+    <div class="container">
+        <div>
+            <div>Temperature: <span class="temperature">Waiting for data...</span>°C</div>
+            <div>Heating (%): <span class="heat_percent">Waiting for data...</span>%</div>
+            <div>Min. (2min): <span class="min_temp2">Waiting for data...</span>°C</div>
+            <div>Max. (2min): <span class="max_temp2">Waiting for data...</span>°C</div>
+            <div>Min. (5min): <span class="min_temp5">Waiting for data...</span>°C</div>
+            <div>Max. (5min): <span class="max_temp5">Waiting for data...</span>°C</div>
+            <div>Time within range: <span class="within_range_time">Waiting for data...</span></div>
+        </div>
+        <div class="btn_container">
+            <button class="panic_btn" onclick="onPanic()"></button>
+            <p class="on_off">Oh shit!</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
