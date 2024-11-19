@@ -58,7 +58,8 @@ String getContentType(String filename) {
     {".html", "text/html"},
     {".js", "application/javascript"},
     {".css", "text/css"},
-    {".wasm", "application/wasm"}
+    {".wasm", "application/wasm"},
+    {".png", "image/png"}
   };
 
   for (unsigned int i = 0; i < sizeof(mime_types) / sizeof(Mime); ++i) {

@@ -8,18 +8,48 @@
 </head>
 <body>
     <h1>Yogurt-O-Rama</h1>
+    <img src="/tp02img.png">
+        
+    <table class="container">
+        <tr>
+            <th>Element</th>
+            <th>Values</th>
+        </tr>
+        <tr>
+            <td>Temperature:</td>
+            <td><span class="temperature">Waiting for data...</span>°C</td>
+        </tr>
+        <tr>
+            <td>Heating (%):</td>
+            <td><span class="heat_percent">Waiting for data...</span>%</td>
+        </tr>
+        <tr>
+            <td>Min. (2min):</td>
+            <td><span class="min_temp2">Waiting for data...</span>°C</td>
+        </tr>
+        <tr>
+            <td>Max. (2min):</td>
+            <td><span class="max_temp2">Waiting for data...</span>°C</td>
+        </tr>
+        <tr>
+            <td>Min. (5min):</td>
+            <td><span class="min_temp5">Waiting for data...</span>°C</td>
+        </tr>
+        <tr>
+            <td>Max. (5min):</td>
+            <td><span class="max_temp5">Waiting for data...</span>°C</td>
+        </tr>
+        <tr>
+            <td>Time within range:</td>
+            <td><span class="within_range_time">Waiting for data...</span></td>
+        </tr>
+    </table>
+
+
     <div class="container">
-        <div>
-            <div>Temperature: <span class="temperature">Waiting for data...</span>°C</div>
-            <div>Heating (%): <span class="heat_percent">Waiting for data...</span>%</div>
-            <div>Min. (2min): <span class="min_temp2">Waiting for data...</span>°C</div>
-            <div>Max. (2min): <span class="max_temp2">Waiting for data...</span>°C</div>
-            <div>Min. (5min): <span class="min_temp5">Waiting for data...</span>°C</div>
-            <div>Max. (5min): <span class="max_temp5">Waiting for data...</span>°C</div>
-            <div>Time within range: <span class="within_range_time">Waiting for data...</span></div>
-        </div>
         <div class="btn_container">
-            <button class="panic_btn" onclick="onPanic()"></button>
+            <button class="panic_btn" onclick="onPanic()"><img src="/allumer.png" alt="Appuyer pour activer ou désactiver
+                complètement le chauffage de la mijoteuse" width="50px" height="50px"></button>
             <p class="on_off">Oh shit!</p>
         </div>
     </div>
