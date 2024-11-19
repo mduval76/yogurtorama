@@ -128,6 +128,7 @@ void handleTemperatureBroadcast(unsigned long current_time) {
       return;
     }
     
+    // SET TUNINGS
     double gap = abs(set_point - input);
     if (gap < 10) {
       myPID.SetTunings(cons_kp, cons_ki, cons_kd);
@@ -232,7 +233,7 @@ void loop() {
   webSocket.loop();
 
   unsigned long current_time = millis();
-  if (current_time - previous_time >= PERIOD_SECOND && isConnected) {
+  if (current_time - previous_time >= PERIOD_SECOND) {
     handleTemperatureBroadcast(current_time);
     handleMinMaxTimeRangedValues();
     previous_time = current_time;

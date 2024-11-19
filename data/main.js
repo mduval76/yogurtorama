@@ -39,12 +39,12 @@ ws.onmessage = function(event) {
         const maxTemp5min = data.max_temp5;
         const withinRangeTime = data.time_in_range;
 
-        document.querySelector('.temperature').innerText = currentTemp;
+        document.querySelector('.temperature').innerText = currentTemp.toFixed(2);
         document.querySelector('.heat_percent').innerText = heatPercent;
-        document.querySelector('.min_temp2').innerText = minTemp2min;
-        document.querySelector('.max_temp2').innerText = maxTemp2min;
-        document.querySelector('.min_temp5').innerText = minTemp5min;
-        document.querySelector('.max_temp5').innerText = maxTemp5min;
+        document.querySelector('.min_temp2').innerText = minTemp2min.toFixed(2);
+        document.querySelector('.max_temp2').innerText = maxTemp2min.toFixed(2);
+        document.querySelector('.min_temp5').innerText = minTemp5min.toFixed(2);
+        document.querySelector('.max_temp5').innerText = maxTemp5min.toFixed(2);
         document.querySelector('.within_range_time').innerText = withinRangeTime;
     } 
     catch (error) {
