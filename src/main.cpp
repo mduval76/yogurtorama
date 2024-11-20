@@ -27,8 +27,8 @@ double set_point = 43.0;
 double input;
 double output;
 
-double agg_kp=4, agg_ki=0.2, agg_kd=1;
-double cons_kp=2, cons_ki=0.1, cons_kd=0.5;
+double agg_kp=3.0, agg_ki=0.3, agg_kd=1.0;
+double cons_kp=1.0, cons_ki=0.15, cons_kd=2.0;
 
 double min_temp2=0, max_temp2=0, min_temp5=0, max_temp5=0;
 std::deque<double> windowed2MinTempReadings;
@@ -58,7 +58,8 @@ String getContentType(String filename) {
     {".html", "text/html"},
     {".js", "application/javascript"},
     {".css", "text/css"},
-    {".wasm", "application/wasm"}
+    {".wasm", "application/wasm"},
+    {".png", "image/png"}
   };
 
   for (unsigned int i = 0; i < sizeof(mime_types) / sizeof(Mime); ++i) {
@@ -130,7 +131,7 @@ void handleTemperatureBroadcast(unsigned long current_time) {
     
     // SET TUNINGS
     double gap = abs(set_point - input);
-    if (gap < 10) {
+    if (gap < 7.5) {
       myPID.SetTunings(cons_kp, cons_ki, cons_kd);
     } else {
       myPID.SetTunings(agg_kp, agg_ki, agg_kd);
@@ -139,15 +140,6 @@ void handleTemperatureBroadcast(unsigned long current_time) {
     myPID.Compute();
   }
 
-  double gap = abs(set_point - input);
-  if (gap < 10) {
-      myPID.SetTunings(cons_kp, cons_ki, cons_kd);
-  } 
-  else {
-      myPID.SetTunings(agg_kp, agg_ki, agg_kd);
-  }
-
-  myPID.Compute();
   int heater_power = map(output, 0, 100, 0, 1023);
   analogWrite(PIN_HEATER, heater_power);
 
